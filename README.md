@@ -27,8 +27,8 @@ DNS over HTTPS (DoH) is a protocol for performing remote Domain Name System (DNS
 ## How Gollum did it?
 Basically speaking, Gollum is a DNS solver based on https://github.com/miekg/dns and [coredns](https://github.com/coredns/coredns).
 
-![logic of gollum](/projects/IPT/repos/gollum/browse/pictures/1.jpg)
+![logic of gollum](https://github.com/MikeLing/gollum/blob/main/pictures/1.jpg)
 
 The gollum will send EDNS request and HTTP DNS request to upstream at the same time when a DNS request arrive. But Gollum conside the HTTP upstream answer in the first priority and wait for `100ms` if the HTTP DNS upstream haven't give answer in time. After that, the Gollum will return response with any answer (except ip in blacklist). But only HTTP DNS upstream answer will be used to update cache.
 
-![gollum flow](/projects/IPT/repos/gollum/browse/pictures/2.png)
+![gollum flow](https://github.com/MikeLing/gollum/blob/main/pictures/2.png)
